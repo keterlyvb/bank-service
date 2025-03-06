@@ -19,7 +19,7 @@ public class CustomerMapper {
         response.setAccountNumber(customer.getAccountNumber());
         response.setBalance(customer.getBalance());
 
-        if (!customer.getTransfers().isEmpty()) {
+        if (customer.getTransfers() != null && !customer.getTransfers().isEmpty()) {
             List<TransferDTO> transferDTOS = new ArrayList<>();
             for (Transfer entity : customer.getTransfers()) {
                 transferDTOS.add(buildTransferDTO(entity));
